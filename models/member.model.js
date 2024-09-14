@@ -18,6 +18,14 @@ const Member = db.define(
       allowNull: false,
       unique: true,
     },
+    book_borrowed: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
+    penalty_until: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
   },
   {
     freezeTableName: true,

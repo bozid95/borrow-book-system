@@ -10,6 +10,7 @@ const db = new Sequelize(
   {
     host: process.env.DB_URL,
     dialect: process.env.DB_DIALECT,
+    logging: true,
   }
 );
 

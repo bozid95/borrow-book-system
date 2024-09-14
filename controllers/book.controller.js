@@ -108,4 +108,37 @@ const deleteBook = async (req, res) => {
   }
 };
 
-export { getAllBooks, getBookById, addBook };
+const getAvailableBook = async (req, res) => {
+  try {
+    const books = await Book.findAll({
+      where: {
+        borrowed: false,
+      },
+    });
+
+    const totalBooks = await Book.count({
+      where: {
+        borrowed: false,
+      },
+    });
+    res.status(200).json({
+      success: true,
+      data: books,
+      totalBooks: totalBooks,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+export {
+  getAllBooks,
+  getBookById,
+  addBook,
+  updateBook,
+  deleteBook,
+  getAvailableBook,
+};

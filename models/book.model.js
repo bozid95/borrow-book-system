@@ -26,11 +26,13 @@ const Book = db.define(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    borrowed: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   },
   {
     freezeTableName: true,
   }
 );
 export default Book;
-
-

@@ -1,4 +1,6 @@
 import Member from "../models/member.model.js";
+import Book from "../models/book.model.js";
+import Borrowing from "../models/borrowing.model.js";
 
 const getAllMembers = async (req, res) => {
   try {
