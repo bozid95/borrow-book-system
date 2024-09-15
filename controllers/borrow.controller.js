@@ -140,7 +140,10 @@ const returnBook = async (req, res) => {
       { where: { id: member_id } }
     );
 
-    res.json({ message: "Book returned successfully." });
+    res.status(201).json({
+      success: true,
+      message: "Book returned successfully.",
+    });
   } catch (error) {
     res.status(500).json({
       success: false,
